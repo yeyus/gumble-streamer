@@ -1,6 +1,54 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "delve@latest": {
+      "last_modified": "2025-03-11T17:52:14Z",
+      "resolved": "github:NixOS/nixpkgs/0d534853a55b5d02a4ababa1d71921ce8f0aee4c#delve",
+      "source": "devbox-search",
+      "version": "1.24.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8y48zhf6h9l28wamwg0z7g89kg32phxq-delve-1.24.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8y48zhf6h9l28wamwg0z7g89kg32phxq-delve-1.24.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6z1ivl6hz5wshxl20mys415lsj90ah6h-delve-1.24.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6z1ivl6hz5wshxl20mys415lsj90ah6h-delve-1.24.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yl06bw9cmsli018m9429qsnnabcc3rx7-delve-1.24.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/yl06bw9cmsli018m9429qsnnabcc3rx7-delve-1.24.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/dxbpsisf2qqzixqq22c038kdpqmr04y0-delve-1.24.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/dxbpsisf2qqzixqq22c038kdpqmr04y0-delve-1.24.0"
+        }
+      }
+    },
     "ffmpeg-headless@latest": {
       "last_modified": "2025-03-13T11:38:39Z",
       "resolved": "github:NixOS/nixpkgs/573c650e8a14b2faa0041645ab18aed7e60f0c9a#ffmpeg-headless",
@@ -222,7 +270,7 @@
       }
     },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
-      "resolved": "github:NixOS/nixpkgs/573c650e8a14b2faa0041645ab18aed7e60f0c9a?lastModified=1741865919&narHash=sha256-4thdbnP6dlbdq%2BqZWTsm4ffAwoS8Tiq1YResB%2BRP6WE%3D"
+      "resolved": "github:NixOS/nixpkgs/096478927c360bc18ea80c8274f013709cf7bdcd?lastModified=1742206328&narHash=sha256-q%2BAQ%2F%2F%2FoMnyyFzzF4H9ShSRENt3Zsx37jTiRkLkXXE0%3D"
     },
     "go@latest": {
       "last_modified": "2025-03-11T17:52:14Z",

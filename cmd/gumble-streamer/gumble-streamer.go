@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"strings"
 	"sync"
 
 	"layeh.com/gumble/gumble"
@@ -32,7 +33,7 @@ type Streamer struct {
 	Address   string
 	TLSConfig *tls.Config
 
-	Room string
+	Room []string
 
 	StreamAddress string
 	Stream        *gumbleffmpeg.Stream
@@ -40,7 +41,7 @@ type Streamer struct {
 	WaitGroup *sync.WaitGroup
 }
 
-func NewStreamer(address string, room string, streamAddress string, config *gumble.Config, tlsConfig *tls.Config) *Streamer {
+func NewStreamer(address string, room []string, streamAddress string, config *gumble.Config, tlsConfig *tls.Config) *Streamer {
 	return &Streamer{
 		State:         StreamerStateDisconnected,
 		Config:        config,
@@ -81,7 +82,7 @@ func (s *Streamer) onConnect(e *gumble.ConnectEvent) {
 	s.State = StreamerStateConnected
 	fmt.Printf("[streamer] connected to %s", s.Address)
 
-	targetChannel := e.Client.Channels.Find(s.Room)
+	targetChannel := e.Client.Channels.Find(s.Room...)
 	if targetChannel == nil {
 		fmt.Printf("[streamer] could not find channel %s, aborting\n", s.Room)
 		e.Client.Disconnect()
@@ -152,7 +153,7 @@ func main() {
 	insecure := flag.Bool("insecure", false, "skip server certificate verification")
 	certificate := flag.String("certificate", "", "PEM encoded certificate and private key")
 
-	room := flag.String("room", "", "The Room name where the streamer shall enter")
+	room := flag.String("room", "", "The Room path separated by commas where the streamer shall enter")
 	stream := flag.String("stream", "", "The Stream to pipe into the room audio")
 
 	flag.Parse()
@@ -175,7 +176,7 @@ func main() {
 	config.Username = *username
 	config.Password = *password
 
-	streamer := NewStreamer(*server, *room, *stream, config, tlsConfig)
+	streamer := NewStreamer(*server, strings.Split(*room, ","), *stream, config, tlsConfig)
 
 	streamer.Connect()
 
