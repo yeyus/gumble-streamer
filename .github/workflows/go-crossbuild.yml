@@ -35,12 +35,12 @@ jobs:
       max-parallel: 1
       matrix:
         goosarch:
-          - 'linux/386'
+#          - 'linux/386'
           - 'linux/amd64'
-          # - 'windows/386'
-#          - 'windows/amd64'
           - 'linux/arm'
           - 'linux/arm64'
+#          - 'windows/386'
+#          - 'windows/amd64'
           - 'darwin/amd64'
           - 'darwin/arm64'
     steps:
