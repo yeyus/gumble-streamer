@@ -11,6 +11,7 @@ import (
 	"layeh.com/gumble/gumble"
 	"layeh.com/gumble/gumbleffmpeg"
 	"layeh.com/gumble/gumbleutil"
+	_ "layeh.com/gumble/opus"
 )
 
 type StreamerState int
@@ -60,9 +61,9 @@ func (s *Streamer) Connect() error {
 	s.WaitGroup.Add(1)
 
 	s.Config.Attach(gumbleutil.Listener{
-		Connect:       s.onConnect,
-		Disconnect:    s.onDisconnect,
-		ChannelChange: s.onChannelChange,
+		Connect:    s.onConnect,
+		Disconnect: s.onDisconnect,
+		UserChange: s.onUserChange,
 	})
 
 	client, err := gumble.DialWithDialer(new(net.Dialer), s.Address, s.Config, s.TLSConfig)
@@ -98,11 +99,48 @@ func (s *Streamer) onDisconnect(e *gumble.DisconnectEvent) {
 	fmt.Printf("[streamer] disconnected from %s\n", s.Address)
 }
 
-func (s *Streamer) onChannelChange(e *gumble.ChannelChangeEvent) {
-	if len(e.Channel.Users) > 1 {
-		s.State = StreamerStateIdle
+func (s *Streamer) onUserChange(e *gumble.UserChangeEvent) {
+	if e.Type == gumble.UserChangeChannel {
+		// users connected to our channel
+		numUsersInChannel := len(e.Client.Self.Channel.Users)
+		fmt.Printf("[streamer:onUserChange] users in our channel %d!\n", numUsersInChannel)
+
+		if numUsersInChannel > 1 && s.State == StreamerStateConnected {
+			// someone arrived
+			s.State = StreamerStateIdle
+			fmt.Printf("[streamer:onChannelChange] someone is in the channel, new state is %v\n", s.State)
+			s.StartStreaming()
+		} else if numUsersInChannel <= 1 && s.State == StreamerStateIdle {
+			// I'm alone here
+			s.State = StreamerStateConnected
+			fmt.Printf("[streamer:onChannelChange] everyone left the room, new state is %v\n", s.State)
+			s.StopStreaming()
+		}
+	}
+}
+
+func (s *Streamer) StartStreaming() error {
+	if s.Stream != nil {
+		panic("[streamer:stream] already have a stream")
+	}
+
+	fmt.Printf("[streamer:stream] starting stream of %s\n", s.StreamAddress)
+	s.Stream = gumbleffmpeg.New(s.Client, gumbleffmpeg.SourceFile(s.StreamAddress))
+	if err := s.Stream.Play(); err != nil {
+		fmt.Printf("[streamer:stream] error launching ffmpeg: %s\n", err)
+		return err
 	} else {
-		s.State = StreamerStateConnected
+		fmt.Printf("Playing %s\n", s.StreamAddress)
+	}
+
+	return nil
+}
+
+func (s *Streamer) StopStreaming() {
+	if s.Stream != nil {
+		fmt.Printf("[streamer:stream] stopping stream of %s\n", s.StreamAddress)
+		s.Stream.Stop()
+		s.Stream = nil
 	}
 }
 

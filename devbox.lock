@@ -1,6 +1,154 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "ffmpeg-headless@latest": {
+      "last_modified": "2025-03-13T11:38:39Z",
+      "resolved": "github:NixOS/nixpkgs/573c650e8a14b2faa0041645ab18aed7e60f0c9a#ffmpeg-headless",
+      "source": "devbox-search",
+      "version": "7.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/5p4lg7grpiw4w1xfpaayjijs08i0fqvh-ffmpeg-headless-7.1-bin",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/jcyxmvb4xcpp5sz5054lym7qxyk3sqqr-ffmpeg-headless-7.1-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/c8a61fk143lirzdl68giimw54f016m0s-ffmpeg-headless-7.1-doc"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/z2zj1cf4bb7wkw7b4n1c0xmm4n1dqrpc-ffmpeg-headless-7.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/a3w3h3n8f638sicw1lbzhjxaldm47p4a-ffmpeg-headless-7.1"
+            },
+            {
+              "name": "data",
+              "path": "/nix/store/4ljqbbxyrzra2q4hhg21h80y2i7jnnv4-ffmpeg-headless-7.1-data"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/jpna86asbi4wxvp8rmkang6ak58zm6xv-ffmpeg-headless-7.1-dev"
+            }
+          ],
+          "store_path": "/nix/store/5p4lg7grpiw4w1xfpaayjijs08i0fqvh-ffmpeg-headless-7.1-bin"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/jbyksi8l8g5fdsfs497kjskpzhfkhwcy-ffmpeg-headless-7.1-bin",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/vcrk3hbx8v9chzvkdxfcbfm4p1mf6495-ffmpeg-headless-7.1-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/3y9by1hyrfyad89s7x19mbjq4hb3z3n3-ffmpeg-headless-7.1-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/k8syj00kdgylgm7mhwz4s319iyli7mln-ffmpeg-headless-7.1-doc"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/n9f2dra1lc8land6y62cwxmk4b7k9710-ffmpeg-headless-7.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/i8lxvmhkgyw0hw9r68nprdjykwphkbb0-ffmpeg-headless-7.1"
+            },
+            {
+              "name": "data",
+              "path": "/nix/store/1jzxjjkcqpgwny6fnv02y8ac9lgl9hzq-ffmpeg-headless-7.1-data"
+            }
+          ],
+          "store_path": "/nix/store/jbyksi8l8g5fdsfs497kjskpzhfkhwcy-ffmpeg-headless-7.1-bin"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/pvgg8wwfhyja2s4j1j38j0lpa806gdk0-ffmpeg-headless-7.1-bin",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/w4c8cri06m3b8q0ra4kizfndy8awlyjf-ffmpeg-headless-7.1-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/dlq66glclwccnf2ah2jh0kibmgnp3k12-ffmpeg-headless-7.1-doc"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/l1yi6ky273aack0grjhhzyb6nnxxaagb-ffmpeg-headless-7.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/52igk5lxv806ba4f3f3igsbh8ab9vicl-ffmpeg-headless-7.1"
+            },
+            {
+              "name": "data",
+              "path": "/nix/store/w96crk0ma1a873hphvg8cqqsp4xbcllf-ffmpeg-headless-7.1-data"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/3lxfzzrc0bb9a50n4aq6ccjg6yp9p1kn-ffmpeg-headless-7.1-dev"
+            }
+          ],
+          "store_path": "/nix/store/pvgg8wwfhyja2s4j1j38j0lpa806gdk0-ffmpeg-headless-7.1-bin"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/510gs7v75lmp69ciknpdradhh4qhvla5-ffmpeg-headless-7.1-bin",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/wm61wdk846sgnz6k2sgymqb6xab8kh9r-ffmpeg-headless-7.1-man",
+              "default": true
+            },
+            {
+              "name": "data",
+              "path": "/nix/store/7apar3d367i1b2qlv65cmxpyb48nw0sb-ffmpeg-headless-7.1-data"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/bp141pd4kp7hidyy2q3f1py65alzj651-ffmpeg-headless-7.1-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/zsflm9jv938g85srjfb6wb4z61a502gz-ffmpeg-headless-7.1-doc"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/jpc9sscycmm7kb7whrf5ak6npalzsng8-ffmpeg-headless-7.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/ynb2k11whj2xw4d5n8h6vb0k38w2ivjn-ffmpeg-headless-7.1"
+            }
+          ],
+          "store_path": "/nix/store/510gs7v75lmp69ciknpdradhh4qhvla5-ffmpeg-headless-7.1-bin"
+        }
+      }
+    },
     "git@latest": {
       "last_modified": "2025-03-11T17:52:14Z",
       "resolved": "github:NixOS/nixpkgs/0d534853a55b5d02a4ababa1d71921ce8f0aee4c#git",
@@ -121,6 +269,70 @@
             }
           ],
           "store_path": "/nix/store/cfjhl0kn7xc65466pha9fkrvigw3g72n-go-1.24.1"
+        }
+      }
+    },
+    "libopus@latest": {
+      "last_modified": "2025-02-23T09:42:26Z",
+      "resolved": "github:NixOS/nixpkgs/2d068ae5c6516b2d04562de50a58c682540de9bf#libopus",
+      "source": "devbox-search",
+      "version": "1.5.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/cfyqcpzrnqhw1df9fbvc1d03knryapjm-libopus-1.5.2",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/y7mx9dkv2km6i6z09r2qh2ca24jmfbrj-libopus-1.5.2-dev"
+            }
+          ],
+          "store_path": "/nix/store/cfyqcpzrnqhw1df9fbvc1d03knryapjm-libopus-1.5.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hg1h2czhkb0l9xc78rasvdcqji8ry2i8-libopus-1.5.2",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/26qx6li6dhyxlv68g9ha9514d2jy3zm2-libopus-1.5.2-dev"
+            }
+          ],
+          "store_path": "/nix/store/hg1h2czhkb0l9xc78rasvdcqji8ry2i8-libopus-1.5.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zpb9z3bkqzfqa7lmrgql8ljn8gv31z13-libopus-1.5.2",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/j24wpqd1bqdm3bxnl48w68bl9sraiqal-libopus-1.5.2-dev"
+            }
+          ],
+          "store_path": "/nix/store/zpb9z3bkqzfqa7lmrgql8ljn8gv31z13-libopus-1.5.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sj3i4yfvr9nirw5mcv4dam1w0j6is85k-libopus-1.5.2",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/yzjkc2mkjrar05vrxkvc85rz1x4m94lf-libopus-1.5.2-dev"
+            }
+          ],
+          "store_path": "/nix/store/sj3i4yfvr9nirw5mcv4dam1w0j6is85k-libopus-1.5.2"
         }
       }
     }
