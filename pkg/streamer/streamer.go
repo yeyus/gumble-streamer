@@ -111,12 +111,12 @@ func (s *Streamer) onUserChange(e *gumble.UserChangeEvent) {
 		if numUsersInChannel > 1 && s.State == StreamerStateConnected {
 			// someone arrived
 			s.State = StreamerStateIdle
-			fmt.Printf("[streamer:onChannelChange] someone is in the channel, new state is %v\n", s.State)
+			fmt.Printf("[streamer:onUserChange] someone is in the channel, new state is %v\n", s.State)
 			s.StartStreaming()
 		} else if numUsersInChannel <= 1 && s.State == StreamerStateIdle {
 			// I'm alone here
 			s.State = StreamerStateConnected
-			fmt.Printf("[streamer:onChannelChange] everyone left the room, new state is %v\n", s.State)
+			fmt.Printf("[streamer:onUserChange] everyone left the room, new state is %v\n", s.State)
 			s.StopStreaming()
 		}
 	}
@@ -138,7 +138,7 @@ func (s *Streamer) StartStreaming() error {
 		fmt.Printf("[streamer:stream] error launching ffmpeg: %s\n", err)
 		return err
 	} else {
-		fmt.Printf("Playing %s\n", s.StreamAddress)
+		fmt.Printf("[streamer:stream] playing %s\n", s.StreamAddress)
 	}
 
 	return nil

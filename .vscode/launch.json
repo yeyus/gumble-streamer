@@ -16,10 +16,14 @@
                 "-room", "LiveATC,KSFO,KSFO-NORCAL-APP28LR",
                 "-server", "10.1.200.5:64738",
                 "-stream", "http://d.liveatc.net/ksfo_app2_l",
-                "-username", "ksfo-norcal-app28lr-bot"
+                "-username", "ksfo-norcal-app28lr-bot2",
+                "-origin", "http://www.liveatc.net",
+                "-referer", "http://www.liveatc.net/",
+                "-useragent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
             ],
             "env": {
-                "CGO_CFLAGS": "-D_FORTIFY_SOURCE=0"
+                "CGO_CFLAGS": "-D_FORTIFY_SOURCE=0",
+                "FFREPORT": "file=\"%p-%t.log\":level=48"
             }
         }
     ]
