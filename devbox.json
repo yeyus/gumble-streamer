@@ -13,7 +13,7 @@
     ],
     "scripts": {
       "build": [
-        "go build -o gumble-streamer-linux-amd64 -v ./..."
+        "go build -o gumble-streamer-linux-amd64 -ldflags \"-I=/lib64/ld-linux-x86-64.so.2\" -v github.com/yeyus/gumble-streamer/cmd/gumble-streamer"
       ]
     }
   }
