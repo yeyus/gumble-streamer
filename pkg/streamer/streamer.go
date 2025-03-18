@@ -3,6 +3,7 @@ package streamer
 import (
 	"crypto/tls"
 	"fmt"
+	"maps"
 	"net"
 	"sync"
 
@@ -40,15 +41,17 @@ type Streamer struct {
 	WaitGroup *sync.WaitGroup
 }
 
-func NewStreamer(address string, room []string, streamAddress string, config *gumble.Config, tlsConfig *tls.Config) *Streamer {
+func NewStreamer(address string, room []string, streamAddress string, config *gumble.Config, tlsConfig *tls.Config, httpHeaders *ffmpegsource.HTTPHeaders, extraParams *ffmpegsource.Params) *Streamer {
 	return &Streamer{
-		State:         StreamerStateDisconnected,
-		Config:        config,
-		TLSConfig:     tlsConfig,
-		Address:       address,
-		Room:          room,
-		StreamAddress: streamAddress,
-		WaitGroup:     new(sync.WaitGroup),
+		State:             StreamerStateDisconnected,
+		Config:            config,
+		TLSConfig:         tlsConfig,
+		Address:           address,
+		Room:              room,
+		StreamAddress:     streamAddress,
+		StreamHTTPHeaders: httpHeaders,
+		StreamExtraParams: extraParams,
+		WaitGroup:         new(sync.WaitGroup),
 	}
 }
 
@@ -126,8 +129,8 @@ func (s *Streamer) StartStreaming() error {
 
 	ffmpegSource := ffmpegsource.NewFFMPEGSource(s.StreamAddress)
 
-	ffmpegSource.HTTPHeaders = *s.StreamHTTPHeaders
-	ffmpegSource.ExtraParams = *s.StreamExtraParams
+	ffmpegSource.HTTPHeaders = maps.Clone(*s.StreamHTTPHeaders)
+	copy(ffmpegSource.ExtraParams, *s.StreamExtraParams)
 
 	fmt.Printf("[streamer:stream] starting stream of %s\n", s.StreamAddress)
 	s.Stream = gumbleffmpeg.New(s.Client, ffmpegSource)

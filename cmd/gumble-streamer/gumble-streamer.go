@@ -7,6 +7,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/yeyus/gumble-streamer/pkg/ffmpegsource"
 	"github.com/yeyus/gumble-streamer/pkg/streamer"
 
 	"github.com/yeyus/gumble/gumble"
@@ -23,6 +24,9 @@ func main() {
 
 	room := flag.String("room", "", "The Room path separated by commas where the streamer shall enter")
 	stream := flag.String("stream", "", "The Stream to pipe into the room audio")
+	referer := flag.String("referer", "", "The referer sent to the streaming server")
+	userAgent := flag.String("useragent", "", "The user agent sent to the streaming server")
+	origin := flag.String("origin", "", "The origin sent to the streaming server")
 
 	flag.Parse()
 
@@ -44,7 +48,23 @@ func main() {
 	config.Username = *username
 	config.Password = *password
 
-	streamer := streamer.NewStreamer(*server, strings.Split(*room, ","), *stream, config, tlsConfig)
+	httpHeaders := make(ffmpegsource.HTTPHeaders)
+
+	if len(*referer) > 0 {
+		httpHeaders["Referer"] = *referer
+	}
+
+	if len(*userAgent) > 0 {
+		httpHeaders["User-Agent"] = *userAgent
+	}
+
+	if len(*origin) > 0 {
+		httpHeaders["Origin"] = *origin
+	}
+
+	extraParams := make(ffmpegsource.Params, 0)
+
+	streamer := streamer.NewStreamer(*server, strings.Split(*room, ","), *stream, config, tlsConfig, &httpHeaders, &extraParams)
 
 	streamer.Connect()
 
