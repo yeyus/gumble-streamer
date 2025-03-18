@@ -3,8 +3,6 @@ package ffmpegsource
 import (
 	"fmt"
 	"os/exec"
-
-	"github.com/yeyus/gumble/gumbleffmpeg"
 )
 
 type HTTPHeaders map[string]string
@@ -17,7 +15,7 @@ type FFMPEGSource struct {
 	ExtraParams []string
 }
 
-func NewFFMPEGSource(url string) gumbleffmpeg.Source {
+func NewFFMPEGSource(url string) FFMPEGSource {
 	return FFMPEGSource{
 		HTTPHeaders: make(map[string]string),
 		SourceUrl:   url,
@@ -25,7 +23,7 @@ func NewFFMPEGSource(url string) gumbleffmpeg.Source {
 	}
 }
 
-func (s *FFMPEGSource) arguments() []string {
+func (s FFMPEGSource) Arguments() []string {
 	arguments := make([]string, 0)
 
 	for header, value := range s.HTTPHeaders {
@@ -39,9 +37,9 @@ func (s *FFMPEGSource) arguments() []string {
 	return arguments
 }
 
-func (s *FFMPEGSource) start(*exec.Cmd) error {
+func (s FFMPEGSource) Start(*exec.Cmd) error {
 	return nil
 }
 
-func (s *FFMPEGSource) done() {
+func (s FFMPEGSource) Done() {
 }
