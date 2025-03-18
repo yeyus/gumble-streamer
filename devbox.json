@@ -3,9 +3,9 @@
   "packages": [
     "go@latest",
     "git@latest",
-    "ffmpeg-headless@latest",
     "libopus@latest",
-    "delve@latest"
+    "delve@latest",
+    "ffmpeg_6-headless@latest"
   ],
   "shell": {
     "init_hook": [
@@ -14,6 +14,12 @@
     "scripts": {
       "build": [
         "go build -o gumble-streamer-linux-amd64 -ldflags \"-I=/lib64/ld-linux-x86-64.so.2\" -v github.com/yeyus/gumble-streamer/cmd/gumble-streamer"
+      ],
+      "build-linux-amd64": [
+        "GOOS=linux GOARCH=amd64 CGO_ENABLED=1 go build -o gumble-streamer-linux-amd64 -ldflags \"-I=/lib64/ld-linux-x86-64.so.2\" -v github.com/yeyus/gumble-streamer/cmd/gumble-streamer"
+      ],
+      "build-darwin-arm64": [
+        "GOOS=darwin GOARCH=arm64 CGO_ENABLED=1 go build -o gumble-streamer-darwin-arm64 -v github.com/yeyus/gumble-streamer/cmd/gumble-streamer"
       ]
     }
   }

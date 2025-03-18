@@ -26,13 +26,19 @@ func NewFFMPEGSource(url string) FFMPEGSource {
 func (s FFMPEGSource) Arguments() []string {
 	arguments := make([]string, 0)
 
-	for header, value := range s.HTTPHeaders {
+	if len(s.HTTPHeaders) > 0 {
 		arguments = append(arguments, "-headers")
-		arguments = append(arguments, fmt.Sprintf("%s: %s", header, value))
+		headers := ""
+		for header, value := range s.HTTPHeaders {
+			headers += fmt.Sprintf("%s: %s\r\n", header, value)
+		}
+		arguments = append(arguments, headers)
 	}
 
 	arguments = append(arguments, "-i", s.SourceUrl)
 	arguments = append(arguments, s.ExtraParams...)
+
+	fmt.Printf("[ffmpeg-source] arguments: %v\n", arguments)
 
 	return arguments
 }

@@ -49,151 +49,151 @@
         }
       }
     },
-    "ffmpeg-headless@latest": {
-      "last_modified": "2025-03-13T11:38:39Z",
-      "resolved": "github:NixOS/nixpkgs/573c650e8a14b2faa0041645ab18aed7e60f0c9a#ffmpeg-headless",
+    "ffmpeg_6-headless@latest": {
+      "last_modified": "2025-03-11T17:52:14Z",
+      "resolved": "github:NixOS/nixpkgs/0d534853a55b5d02a4ababa1d71921ce8f0aee4c#ffmpeg_6-headless",
       "source": "devbox-search",
-      "version": "7.1",
+      "version": "6.1.2",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "bin",
-              "path": "/nix/store/5p4lg7grpiw4w1xfpaayjijs08i0fqvh-ffmpeg-headless-7.1-bin",
+              "path": "/nix/store/l454v4024h16x0ldh50fclm1m4zyr4kh-ffmpeg-headless-6.1.2-bin",
               "default": true
             },
             {
               "name": "man",
-              "path": "/nix/store/jcyxmvb4xcpp5sz5054lym7qxyk3sqqr-ffmpeg-headless-7.1-man",
+              "path": "/nix/store/vjllckwsjafhvf8fhn90jmn44m2nm0vh-ffmpeg-headless-6.1.2-man",
               "default": true
             },
             {
-              "name": "doc",
-              "path": "/nix/store/c8a61fk143lirzdl68giimw54f016m0s-ffmpeg-headless-7.1-doc"
-            },
-            {
-              "name": "lib",
-              "path": "/nix/store/z2zj1cf4bb7wkw7b4n1c0xmm4n1dqrpc-ffmpeg-headless-7.1-lib"
-            },
-            {
-              "name": "out",
-              "path": "/nix/store/a3w3h3n8f638sicw1lbzhjxaldm47p4a-ffmpeg-headless-7.1"
-            },
-            {
               "name": "data",
-              "path": "/nix/store/4ljqbbxyrzra2q4hhg21h80y2i7jnnv4-ffmpeg-headless-7.1-data"
+              "path": "/nix/store/yy9jvgjqvydskgcqvk0avdial76rk8jd-ffmpeg-headless-6.1.2-data"
             },
             {
               "name": "dev",
-              "path": "/nix/store/jpna86asbi4wxvp8rmkang6ak58zm6xv-ffmpeg-headless-7.1-dev"
+              "path": "/nix/store/12hs668s2l72zpr27xjhd4g7f3y79q2h-ffmpeg-headless-6.1.2-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/l03ak2ahaw41a775vl3n7ljifvn7qs3x-ffmpeg-headless-6.1.2-doc"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/jdr233majakf03s8azffsk3g7a1z2yrc-ffmpeg-headless-6.1.2-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/c0g4b1cw3di05cdkxfgpmaqx9knh5iir-ffmpeg-headless-6.1.2"
             }
           ],
-          "store_path": "/nix/store/5p4lg7grpiw4w1xfpaayjijs08i0fqvh-ffmpeg-headless-7.1-bin"
+          "store_path": "/nix/store/l454v4024h16x0ldh50fclm1m4zyr4kh-ffmpeg-headless-6.1.2-bin"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "bin",
-              "path": "/nix/store/jbyksi8l8g5fdsfs497kjskpzhfkhwcy-ffmpeg-headless-7.1-bin",
+              "path": "/nix/store/5mfzq6sc74rzrpg8xhx35gbxk6gpy13k-ffmpeg-headless-6.1.2-bin",
               "default": true
             },
             {
               "name": "man",
-              "path": "/nix/store/vcrk3hbx8v9chzvkdxfcbfm4p1mf6495-ffmpeg-headless-7.1-man",
+              "path": "/nix/store/w73z7sa902mw9w167f5fg9fmi302dk5w-ffmpeg-headless-6.1.2-man",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/3y9by1hyrfyad89s7x19mbjq4hb3z3n3-ffmpeg-headless-7.1-dev"
+              "path": "/nix/store/0sirsx5qm87nx8x4ki32fv4ipj90cw4n-ffmpeg-headless-6.1.2-dev"
             },
             {
               "name": "doc",
-              "path": "/nix/store/k8syj00kdgylgm7mhwz4s319iyli7mln-ffmpeg-headless-7.1-doc"
+              "path": "/nix/store/3v1zvxj94m1pyaliaiwmq21s32xcfa27-ffmpeg-headless-6.1.2-doc"
             },
             {
               "name": "lib",
-              "path": "/nix/store/n9f2dra1lc8land6y62cwxmk4b7k9710-ffmpeg-headless-7.1-lib"
+              "path": "/nix/store/73dmr2nbdlpbi7jmdx2iik6y4a33dqim-ffmpeg-headless-6.1.2-lib"
             },
             {
               "name": "out",
-              "path": "/nix/store/i8lxvmhkgyw0hw9r68nprdjykwphkbb0-ffmpeg-headless-7.1"
+              "path": "/nix/store/ac2aypgvrfvvr2zms21qqpjbrslmlz7k-ffmpeg-headless-6.1.2"
             },
             {
               "name": "data",
-              "path": "/nix/store/1jzxjjkcqpgwny6fnv02y8ac9lgl9hzq-ffmpeg-headless-7.1-data"
+              "path": "/nix/store/r6sdj0yfcql0g56xpbfbfg35h6xgv29k-ffmpeg-headless-6.1.2-data"
             }
           ],
-          "store_path": "/nix/store/jbyksi8l8g5fdsfs497kjskpzhfkhwcy-ffmpeg-headless-7.1-bin"
+          "store_path": "/nix/store/5mfzq6sc74rzrpg8xhx35gbxk6gpy13k-ffmpeg-headless-6.1.2-bin"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "bin",
-              "path": "/nix/store/pvgg8wwfhyja2s4j1j38j0lpa806gdk0-ffmpeg-headless-7.1-bin",
+              "path": "/nix/store/wkhj6qa5v1mqgbpiny6pp5m3k9snsybl-ffmpeg-headless-6.1.2-bin",
               "default": true
             },
             {
               "name": "man",
-              "path": "/nix/store/w4c8cri06m3b8q0ra4kizfndy8awlyjf-ffmpeg-headless-7.1-man",
+              "path": "/nix/store/61fr1pm5s8qmfv64wi93wlprm8nw28f9-ffmpeg-headless-6.1.2-man",
               "default": true
             },
             {
-              "name": "doc",
-              "path": "/nix/store/dlq66glclwccnf2ah2jh0kibmgnp3k12-ffmpeg-headless-7.1-doc"
-            },
-            {
-              "name": "lib",
-              "path": "/nix/store/l1yi6ky273aack0grjhhzyb6nnxxaagb-ffmpeg-headless-7.1-lib"
-            },
-            {
-              "name": "out",
-              "path": "/nix/store/52igk5lxv806ba4f3f3igsbh8ab9vicl-ffmpeg-headless-7.1"
-            },
-            {
               "name": "data",
-              "path": "/nix/store/w96crk0ma1a873hphvg8cqqsp4xbcllf-ffmpeg-headless-7.1-data"
+              "path": "/nix/store/lckglpk434picxjrb24zkacnsp5nvi8m-ffmpeg-headless-6.1.2-data"
             },
             {
               "name": "dev",
-              "path": "/nix/store/3lxfzzrc0bb9a50n4aq6ccjg6yp9p1kn-ffmpeg-headless-7.1-dev"
+              "path": "/nix/store/gwcqwmvk9q0wxrd0xp2zc5dbxzhdfnix-ffmpeg-headless-6.1.2-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/xhzvypyyrh8kx2zw8x06m5nlhxzf9dca-ffmpeg-headless-6.1.2-doc"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/nrc53py3wypqh0vz3fs180bfgyhqbw3h-ffmpeg-headless-6.1.2-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/xs7h9kz9x6dir1pv9497bqg05xi0xk1h-ffmpeg-headless-6.1.2"
             }
           ],
-          "store_path": "/nix/store/pvgg8wwfhyja2s4j1j38j0lpa806gdk0-ffmpeg-headless-7.1-bin"
+          "store_path": "/nix/store/wkhj6qa5v1mqgbpiny6pp5m3k9snsybl-ffmpeg-headless-6.1.2-bin"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "bin",
-              "path": "/nix/store/510gs7v75lmp69ciknpdradhh4qhvla5-ffmpeg-headless-7.1-bin",
+              "path": "/nix/store/rw2axchg5gdg0kmh3qdpm5mla8cpkd6v-ffmpeg-headless-6.1.2-bin",
               "default": true
             },
             {
               "name": "man",
-              "path": "/nix/store/wm61wdk846sgnz6k2sgymqb6xab8kh9r-ffmpeg-headless-7.1-man",
+              "path": "/nix/store/5vb82j9445cqzbjzal544sc6vj80xqjd-ffmpeg-headless-6.1.2-man",
               "default": true
             },
             {
               "name": "data",
-              "path": "/nix/store/7apar3d367i1b2qlv65cmxpyb48nw0sb-ffmpeg-headless-7.1-data"
+              "path": "/nix/store/dhqwhx8j630v2r5ycmwwm4gag007jgk5-ffmpeg-headless-6.1.2-data"
             },
             {
               "name": "dev",
-              "path": "/nix/store/bp141pd4kp7hidyy2q3f1py65alzj651-ffmpeg-headless-7.1-dev"
+              "path": "/nix/store/6wqsqflv94y7l1gycnigd5iy02y7yxlf-ffmpeg-headless-6.1.2-dev"
             },
             {
               "name": "doc",
-              "path": "/nix/store/zsflm9jv938g85srjfb6wb4z61a502gz-ffmpeg-headless-7.1-doc"
+              "path": "/nix/store/zccks18w263nwpilhcimc5lrlgzgr0rm-ffmpeg-headless-6.1.2-doc"
             },
             {
               "name": "lib",
-              "path": "/nix/store/jpc9sscycmm7kb7whrf5ak6npalzsng8-ffmpeg-headless-7.1-lib"
+              "path": "/nix/store/m6i3m5cvagzhjn3ygfffdjgh41dw4r53-ffmpeg-headless-6.1.2-lib"
             },
             {
               "name": "out",
-              "path": "/nix/store/ynb2k11whj2xw4d5n8h6vb0k38w2ivjn-ffmpeg-headless-7.1"
+              "path": "/nix/store/3hiki8rcrfz7s86djsy5b2kh4px95irf-ffmpeg-headless-6.1.2"
             }
           ],
-          "store_path": "/nix/store/510gs7v75lmp69ciknpdradhh4qhvla5-ffmpeg-headless-7.1-bin"
+          "store_path": "/nix/store/rw2axchg5gdg0kmh3qdpm5mla8cpkd6v-ffmpeg-headless-6.1.2-bin"
         }
       }
     },
